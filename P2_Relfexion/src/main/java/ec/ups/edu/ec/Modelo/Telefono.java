@@ -25,6 +25,8 @@ public class Telefono {
 //metodo 
     public Telefono() {
     }
+    
+    
 
     public Telefono(String codigo, String numero, String tipo, String operadora) {
         this.codigo = codigo;
@@ -73,7 +75,7 @@ public class Telefono {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.codigo);
+        hash = 43 * hash + Objects.hashCode(this.codigo);
         return hash;
     }
 
@@ -94,6 +96,8 @@ public class Telefono {
         }
         return true;
     }
+
+    
 
     
 }

@@ -15,36 +15,20 @@ import java.util.List;
  */
 public class ControladorUsuario extends ControladorGenerico<Usuario>{
 
-    //private List<E> listaGenerica;
-    
-   
     @Override
-    public boolean  validar(Usuario obj){
+    public boolean  validar(Usuario obj) throws Exception{
         if (obj.getCedula().length() == 10) {
             return true;
         }
-        return false;
+        throw new Exception();
     }
-    /*
-     public Controlador() {
-        listaGenerica = new ArrayList<>();
-    }
-     */
-   
+    
     public Usuario login(String correo, String contrasena) {
-
         for (var usuario : (List<Usuario>) findAll()) {
-
             if (usuario.getCorreo().equals(correo) && usuario.getContraseña().equals(contrasena)) {
                 return usuario;
             }
         }
         return null;
     }
-/*    
-    @Override
-    public List<Usuario> findAll() {
-       return getListado();
-    }
-  */  
 }

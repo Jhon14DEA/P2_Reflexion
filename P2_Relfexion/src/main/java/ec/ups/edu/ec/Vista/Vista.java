@@ -27,15 +27,12 @@ public class Vista extends javax.swing.JFrame {
     /**
      * Creates new form Vista
      */
-    public Vista(ControladorUsuario controladorU, ControladorTelefono controladorT, Vtn_GestionUsuario gestionU) {
+    public Vista() {
         initComponents();
-        this.controladorT = controladorT;
-        this.controladorU = controladorU;
-        this.gestionU = gestionU;
-    }
-
-    private Vista() {
         
+        this.controladorT = new  ControladorTelefono();
+        this.controladorU = new ControladorUsuario();
+        this.gestionU = new Vtn_GestionUsuario();
     }
 
     public void limpiar(){
@@ -157,19 +154,8 @@ public class Vista extends javax.swing.JFrame {
 
     private void btnCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUsuarioActionPerformed
         // TODO add your handling code here:
-        /*Vtn_GestionUsuario gestionUsuario = new Gestion_Usuario();
-        gestionUsuario.setVisible(true);*/
         
-        Usuario u = controladorU.login(txtUsuario.getText(), txtContrasena.getText());
-        
-        if(u != null){
-           controladorU.buscar(u);       
-            
-        }else{
-            JOptionPane.showMessageDialog(null, "Usuario no encontrado");
-        }
-        
-        
+        gestionU.setVisible(true);
     }//GEN-LAST:event_btnCrearUsuarioActionPerformed
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
@@ -207,6 +193,7 @@ public class Vista extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Vista().setVisible(true);
+                
             }
         });
     }

@@ -5,7 +5,6 @@
  */
 package ec.ups.edu.ec.Controlador;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,7 @@ import java.util.List;
  * @author ASUS
  * @param <E>
  */
-public abstract class ControladorGenerico<E>{
+public abstract class ControladorGenerico<E> {
     private List<E> listado;
     
 
@@ -23,7 +22,14 @@ public abstract class ControladorGenerico<E>{
     }
 
     public boolean create(E obj){
-      return listado.add(obj);
+        try {
+            if (validar(obj)) {
+                return listado.add(obj);
+            }
+        } catch (Exception e){
+            return false;
+        }
+        return true;
     }
     
     public boolean eliminar(E obj){
@@ -32,7 +38,7 @@ public abstract class ControladorGenerico<E>{
     }
     
     public E buscar(E comparacion){
-        return listado.stream().filter(obj -> obj.equals(comparacion)).findFirst().get();
+        return listado.stream().filter(obj -> obj.equals(comparacion)).findFirst().orElse(null);
     }
     public int buscarPosicion(E comparacion) {
         for (int i = 0; i < listado.size(); i++) {
@@ -56,7 +62,7 @@ public abstract class ControladorGenerico<E>{
      public List<E> findAll(){
      return listado;
      }
-    public abstract boolean validar(E obj);
+    public abstract boolean validar(E obj) throws Exception;
 
     public List<E> getListado() {
         return listado;

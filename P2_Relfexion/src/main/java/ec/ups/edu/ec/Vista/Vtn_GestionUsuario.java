@@ -27,6 +27,7 @@ public class Vtn_GestionUsuario extends javax.swing.JInternalFrame {
      */
     public Vtn_GestionUsuario() {
         initComponents();
+        
     }
 
     /**
@@ -274,6 +275,7 @@ public class Vtn_GestionUsuario extends javax.swing.JInternalFrame {
 
     private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtCedulaActionPerformed
 
 

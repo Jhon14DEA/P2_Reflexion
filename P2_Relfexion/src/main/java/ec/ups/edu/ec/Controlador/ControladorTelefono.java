@@ -6,29 +6,12 @@
 package ec.ups.edu.ec.Controlador;
 
 import ec.ups.edu.ec.Modelo.Telefono;
-import java.util.List;
 
 /**
  *
  * @author ASUS
  */
 public class ControladorTelefono extends ControladorGenerico<Telefono>{
-
-    /*
-    public ControaldorTelefono() {
-        super(Telefono.class);
-    }
-    
-    public  boolean crearTelefono(String numero, String tipo, String operadora, String codigo){
-        Telefono nuevoTelefono = new Telefono(numero, tipo, operadora, codigo);
-        return super.crear(nuevoTelefono);
-        
-    }
-    @Override
-    public List<Telefono> findAll() {
-        return getListado();
-    }
-    */
     
     @Override
     public  boolean  validar(Telefono obj){

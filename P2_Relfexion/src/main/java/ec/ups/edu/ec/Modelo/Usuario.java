@@ -124,14 +124,10 @@ public class Usuario {
     public List<Telefono> getListaTelefonos() {
         return ListaTelefonos;
     }
-/*
-    public void eliminarTelefono (int codigo){
 
-        var eliminarT = ListaTelefonos.stream().filter(telefono -> telefono.getCodigo() == codigo).findFirst().get();
-        ListaTelefonos.remove(eliminarT);
-                
-    }
-  */        
+    public boolean eliminarTelefono (Telefono t){
+        return ListaTelefonos.remove(t);
+    }      
     public Telefono buscarTelefono(String numero) {
         return this.ListaTelefonos.stream().filter(e->e.getNumero().equals(numero)).findFirst().get();
     }
